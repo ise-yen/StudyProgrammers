@@ -26,12 +26,12 @@ int solution(vector<string> friends, vector<string> gifts) {
     for(int i = 0; i < friends.size(); i++){
         count.insert({friends[i], 0});
         next.insert({friends[i], 0});
-        unordered_map<string, int> gifts;
+        unordered_map<string, int> gift_um;
         for(int j = 0; j < friends.size(); j++){
             if(friends[i] == friends[j]) continue;
-            gifts.insert({friends[j], 0});
+            gift_um.insert({friends[j], 0});
         }
-        um.insert({friends[i], gifts});
+        um.insert({friends[i], gift_um});
     }
 
     for(int i = 0; i < gifts.size(); i++){
