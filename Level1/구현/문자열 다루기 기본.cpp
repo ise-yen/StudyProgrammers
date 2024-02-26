@@ -1,0 +1,15 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+bool solution(string s) {
+    if(s.length() != 4 && s.length() != 6) return false;
+    
+    for(int i = 0; i < s.length(); i++){
+      // 숫자 판단 함수
+      if(!isdigit(s[i])) return false;
+    }
+  
+    return true;
+}
