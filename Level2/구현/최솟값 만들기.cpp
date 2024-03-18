@@ -14,6 +14,8 @@ int solution(vector<int> A, vector<int> B)
     
     sort(A.begin(), A.end());
     sort(B.begin(), B.end(), compare);
+    // compare 없이 rbegin이나 rend()로 내림차순 가능
+    //sort(B.rbegin(), B.rend());
     
     for(int i = 0; i < A.size(); i++){
         answer += A[i] * B[i];
