@@ -1,0 +1,22 @@
+#include <string>
+#include <vector>
+#include <set>
+
+using namespace std;
+
+vector<int> solution(int n, vector<string> words) {
+    vector<int> people(n);
+
+    set<string> before;
+    before.insert(words[0]);
+    people[0] = 1;
+
+    for(int i = 1; i < words.size(); i++){
+        people[i % n]++;
+        string word = words[i];
+        set<string>::iterator it = before.find(word);
+        if(it != before.end() || words[i-1].back() != word.front()) return {i%n + 1, people[i%n]};
+        before.insert(word);
+    }
+    return {0, 0};
+}
