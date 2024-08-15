@@ -20,3 +20,5 @@ vector<int> solution(vector<int> arr)
     reverse(answer.begin(), answer.end());
     return answer;
 }
+
+// 118.42ms, 105MB
