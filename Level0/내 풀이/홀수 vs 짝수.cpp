@@ -12,3 +12,14 @@ int solution(vector<int> v) {
     
     return max(odd, even);
 }
+
+int solution2(vector<int> v) {
+    return max(
+        accumulate(v.begin(), v.end(), 0,
+                   [i=0](int acc, int val) mutable{
+                       int res = (i%2!=0) ? acc+val : acc; i++; return res;}), 
+        accumulate(v.begin(), v.end(), 0,
+                   [i=0](int acc, int val) mutable{
+                       int res = (i%2!=1) ? acc+val : acc; i++; return res;})
+        );
+}
